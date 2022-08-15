@@ -46,6 +46,7 @@ main {
   border: 2px solid #224778;
 }
 main h3 {
+  border-radius: 10px;
   font-size: 2em;
   font-weight: bold;
   padding: 10px 150px;
