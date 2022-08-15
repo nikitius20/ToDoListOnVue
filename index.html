@@ -12,6 +12,7 @@
   <body>
     <div id="vue-app">
       <div class="inputArea">
+        <h3 v-bind:class="computeTitle">To Do List</h3>
         <input type="text" placeholder="write task here" v-model="taskInput" />
         <button v-on:click="addTask">Add task</button>
       </div>

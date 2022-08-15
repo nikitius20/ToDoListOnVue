@@ -14,7 +14,25 @@ new Vue({
     },
     toggleCheck: function (index) {
       this.tasks[index].checked = !this.tasks[index].checked;
-      console.log(this.tasks[index]);
+    },
+  },
+  computed: {
+    computeTitle: function () {
+      const amountOfChekedTasks = this.tasks.reduce((accum, currentValue) => {
+        if (currentValue.checked) {
+          return accum + 1;
+        } else {
+          return accum;
+        }
+      }, 0);
+
+      if (amountOfChekedTasks === this.tasks.length) {
+        return { greenTitle: true };
+      } else if (amountOfChekedTasks >= this.tasks.length / 2) {
+        return { orangeTitle: true };
+      } else {
+        return { redTitle: true };
+      }
     },
   },
 });
