@@ -2,11 +2,82 @@
   text-decoration: line-through;
 }
 .redTitle {
-  color: red;
+  color: #e55c7d;
 }
 .orangeTitle {
-  color: orange;
+  color: #e5a65c;
 }
 .greenTitle {
-  color: green;
+  color: #5ce572;
+}
+
+body {
+  background-color: #c3ddff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputArea input {
+  background-color: #acd0ff;
+  border: 2px solid #80b7fe;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-right: 20px;
+}
+.inputArea input:focus {
+  outline: none;
+  box-shadow: 1px 1px 2px 1px #12325b;
+}
+.inputArea button {
+  border: 2px solid #224778;
+  background-color: #224778;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+.inputArea button:active {
+  background-color: white;
+  color: #224778;
+  border: 2px solid #224778;
+}
+main h3 {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px 150px;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  background-color: white;
+  border: 2px solid #224778;
+}
+.tasksArea input {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+}
+.tasksArea {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tasksArea div {
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 300;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.5em;
+  width: 500px;
+  padding: 10px 10px;
+}
+.tasksArea div:hover {
+  transition-duration: 0.2s;
+  width: 520px;
+  border-left: 10px solid #224778;
+  border-right: 10px solid #224778;
 }

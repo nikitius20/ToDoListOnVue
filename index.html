@@ -8,29 +8,37 @@
     <script src="index.js" defer></script>
     <title>To Do List</title>
     <link rel="stylesheet" href="style.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="vue-app">
-      <div class="inputArea">
+    <main>
         <h3 v-bind:class="computeTitle">To Do List</h3>
-        <input type="text" placeholder="write task here" v-model="taskInput" />
+        <div class="inputArea">
+        <input type="text" placeholder="Write task here" v-model="taskInput" />
         <button v-on:click="addTask">Add task</button>
       </div>
 
       <div class="tasksArea">
-        <div
+        <div 
           v-for="(task,index) in tasks"
           v-on:click="deleteTask(index)"
           v-bind:class="{checked:task.checked}"
         >
-          {{task.text}}
           <input
             type="checkbox"
             v-on:click.stop="toggleCheck(index)"
             v-bind:checked="task.checked"
           />
+          {{task.text}}
+          
         </div>
       </div>
     </div>
+    </main>
+      
   </body>
 </html>

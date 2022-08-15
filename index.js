@@ -6,8 +6,10 @@ new Vue({
   },
   methods: {
     addTask: function () {
-      this.tasks.push({ text: this.taskInput, checked: false });
-      this.taskInput = "";
+      if (this.taskInput !== "") {
+        this.tasks.push({ text: this.taskInput, checked: false });
+        this.taskInput = "";
+      }
     },
     deleteTask: function (index) {
       this.tasks.splice(index, 1);
