@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="vue-app">
+      <div class="inputArea">
+        <input type="text" placeholder="write task here" v-model="taskInput" />
+        <button v-on:click="addTask">Add task</button>
+      </div>
+
+      <div class="tasksArea">
+        <div
+          v-for="(task,index) in tasks"
+          v-on:click="deleteTask(index)"
+          v-bind:class="{checked:task.checked}"
+        >
+          {{task.text}}
+          <input
+            type="checkbox"
+            v-on:click.stop="toggleCheck(index)"
+            v-bind:checked="task.checked"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
